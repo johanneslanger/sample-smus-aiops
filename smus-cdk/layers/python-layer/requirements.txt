@@ -1,2 +1,3 @@
-boto3>=1.38.0
+boto3
 requests>=2.30.0
+urllib3<2  # urllib3 2.x is incompatible with the Python 3.9 Lambda runtime
