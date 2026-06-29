@@ -1,3 +1,4 @@
 awscli
 boto3
-sagemaker
+sagemaker<3
+pytz
