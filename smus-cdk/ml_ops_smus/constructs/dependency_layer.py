@@ -33,7 +33,15 @@ class DependencyLayerConstruct(Construct):
         try:
             print(f"Installing dependencies to {python_path}")
             subprocess.run(
-                ["pip", "install", "-r", requirements_path, "-t", python_path],
+                [
+                    "pip", "install",
+                    "--platform", "manylinux2014_x86_64",
+                    "--implementation", "cp",
+                    "--python-version", "3.9",
+                    "--only-binary=:all:",
+                    "-r", requirements_path,
+                    "-t", python_path,
+                ],
                 check=True,
                 capture_output=True,
                 text=True
